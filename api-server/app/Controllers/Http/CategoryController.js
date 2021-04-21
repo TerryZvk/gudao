@@ -26,7 +26,7 @@ class CategoryController {
         return model
     }
 
-    async delete({request,params}){
+    async destroy({request,params}){
         const model = await Category.find(params.id)
         await model.delete()
         return {

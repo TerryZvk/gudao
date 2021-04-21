@@ -16,9 +16,9 @@ Vue.use(VueRouter)
       { path: '/categories/create', component: CategoryEdit },
       { path: '/categories/list', component: CategoryList },
       { path: '/categories/edit/:id', component: CategoryEdit, props: true },
-      { path: '/articles/create', component: ArticleEdit },
-      { path: '/articles/list', component: ArticleList },
-      { path: '/articles/edit/:id', component: ArticleEdit, props: true },
+      { path: '/posts/create', component: ArticleEdit },
+      { path: '/posts/list', component: ArticleList },
+      { path: '/posts/edit/:id', component: ArticleEdit, props: true },
     ]
   }
 ]

@@ -14,7 +14,7 @@
             v-for="item in categories"
             :key="item._id"
             :label="item.name"
-            :value="item._id">
+            :value="item.name">
           </el-option>
         </el-select>
       </el-form-item>
@@ -43,15 +43,15 @@ export default {
   methods:{
     async save(){
       if(this.id){
-        await this.$http.put(`/rest/articles/${this.id}`, this.model)
-          this.$router.push('/articles/list')
+        await this.$http.put(`/posts/${this.id}`, this.model)
+          this.$router.push('/posts/list')
           this.$message({
             type:'success',
             message: '修改成功！'
           })
       }else{
-        await this.$http.post('/rest/articles', this.model)
-        this.$router.push('/articles/list')
+        await this.$http.post('/posts', this.model)
+        this.$router.push('/posts/list')
         this.$message({
           type:'success',
           message: '保存成功！'
@@ -60,11 +60,11 @@ export default {
      
     },
     async fetch(){
-      const res = await this.$http.get(`/rest/articles/${this.id}`)
+      const res = await this.$http.get(`/posts/${this.id}`)
       this.model = res.data
     },
     async fetchCategories(){
-       const res = await this.$http.get(`/rest/categories`)
+       const res = await this.$http.get(`/categories`)
       this.categories = res.data
     }
   },
